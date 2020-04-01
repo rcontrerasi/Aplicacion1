@@ -2,9 +2,28 @@
     crearListado(data);
 
 });
+
+var btnBuscar = document.getElementById("btnBuscar")
+btnBuscar.onclick = function () {
+    var nombreCurso = document.getElementById("txtFindNombre").value;
+    $.get("./BuscarCursoporNombre/?nombre=" + nombreCurso , function (dataFind) {
+        crearListado(dataFind);
+    })
+    
+}
+
+var btnLimpiar = document.getElementById("btnLimpiar")
+btnLimpiar.onclick = function () {
+    $.get("./listarCurso", function (data) {
+        crearListado(data);
+
+    });
+    document.getElementById("txtFindNombre").value="";
+} 
+
 function crearListado(cursos) {
     var contenido = "";
-
+    contenido += "<h2>Cursos</h2>";
     contenido += "<table id='tablaCurso' class='table'>";
     contenido += "<thead>";
     contenido += "<tr>";

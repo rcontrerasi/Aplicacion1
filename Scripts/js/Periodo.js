@@ -2,6 +2,27 @@
     crearListado(data);
 
 });
+
+var txtFindNombre = document.getElementById("txtFindNombre")
+txtFindNombre.onkeyup = function () {
+
+    var nombreCurso = document.getElementById("txtFindNombre").value;
+        $.get("./BuscarPeriodoporNombre/?nombre=" + nombreCurso, function (dataFind) {
+        crearListado(dataFind);
+ })
+
+}
+
+var btnLimpiar = document.getElementById("btnLimpiar")
+    btnLimpiar.onclick = function () {
+    
+        $.get("./listarPeriodos", function (data) {
+        crearListado(data);
+
+    });
+    document.getElementById("txtFindNombre").value = "";
+} 
+
 function crearListado(periodos) {
     var contenido = "";
     
