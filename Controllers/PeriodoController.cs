@@ -16,5 +16,16 @@ namespace Aplicacion1.Controllers
         public string mensaje() {
             return "Bienvenido a Periodo";
         }
+        public JsonResult listarPeriodos()
+        {
+            CLinQDataContext bd = new CLinQDataContext();
+            var lista = bd.Periodo.Where(p => p.BHABILITADO.Equals(1))
+                .Select(p => new { p.IIDPERIODO, p.NOMBRE, 
+                    FECHAINICIO= ((DateTime)p.FECHAINICIO).ToShortDateString(), 
+                    FECHAFIN = ((DateTime)p.FECHAFIN).ToShortDateString() });
+
+            return Json(lista, JsonRequestBehavior.AllowGet);
+
+        }
     }
 }

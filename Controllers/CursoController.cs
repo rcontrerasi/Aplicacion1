@@ -17,5 +17,14 @@ namespace Aplicacion1.Controllers
         {
             return "Bienvenido a Curso";
         }
+
+        public JsonResult listarCurso() {
+            CLinQDataContext bd = new CLinQDataContext();
+            var lista = bd.Curso.Where(c => c.BHABILITADO.Equals(1))
+                .Select(c => new { c.IIDCURSO, c.NOMBRE, c.DESCRIPCION });
+
+            return Json(lista, JsonRequestBehavior.AllowGet);
+               
+        }
     }
 }
