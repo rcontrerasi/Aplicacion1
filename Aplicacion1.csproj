@@ -131,6 +131,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CLinQ.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\PeriodoController.cs" />
     <Compile Include="Controllers\SeccionController.cs" />
@@ -145,6 +146,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.18\images\sort_desc_disabled.png" />
     <Content Include="Content\datatables.css" />
     <Content Include="Scripts\datatables.js" />
     <Content Include="Scripts\datatables.min.js" />
@@ -173,6 +179,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\Alumno.js" />
     <Content Include="Scripts\js\Curso.js" />
     <Content Include="Scripts\js\Periodo.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -190,6 +197,7 @@
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Seccion\Inicio.cshtml" />
     <Content Include="Views\Periodo\Index.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

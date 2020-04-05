@@ -31,7 +31,11 @@ namespace Aplicacion1.Controllers
             CLinQDataContext bd = new CLinQDataContext();
 
             var lista = bd.Curso.Where(c => c.BHABILITADO.Equals(1) && c.NOMBRE.Contains(nombre) )
-                .Select(c => new { c.IIDCURSO, c.NOMBRE, c.DESCRIPCION });
+                .Select(c => new { 
+                    IID = c.IIDCURSO, 
+                    c.NOMBRE, 
+                    c.DESCRIPCION
+                });
 
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
